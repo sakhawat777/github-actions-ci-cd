@@ -1,39 +1,36 @@
 name: Deploy to Netlify
 
 on:
-   push:
-      branches:
-         - deployment-dev
-         - deployment-stage
-         - deployment-pre-prod
-         - deployment-prod
+  push:
+    branches:
+      - deployment-dev
+      - deployment-stage
+      - deployment-pre-prod
+      - deployment-prod
 
 jobs:
-   deploy:
-      runs-on: ubuntu-latest
+  deploy:
+    runs-on: ubuntu-latest
 
-      steps:
-         - name: Checkout Code
-           uses: actions/checkout@v3
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
 
-         - name: Setup Node.js
-           uses: actions/setup-node@v3
-           with:
-              node-version: '20'
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
 
-         - name: Install Dependencies
-           run: npm install
+      - name: Install Dependencies
+        run: npm install
 
-         - name: Build Project
-           run: npm run build
+      - name: Build Project
+        run: npm run build
 
-         - name: Deploy to Netlify
-           uses: nwtgck/actions-netlify@v2.0
-           with:
-              publish-dir: './dist'
-              production-branch: deployment-prod
-              github-token: ${{ secrets.GH_PAT }}
-              deploy-message: 'Deploying to ${{ github.ref }}'
-              netlify-auth-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-              netlify-site-id: ${{ secrets.NETLIFY_SITE_ID }}
-              production-deploy: ${{ github.ref == 'refs/heads/deployment-prod' }}
+      - name: Deploy to Netlify
+        uses: netlify/actions/cli@master
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        with:
+          args: deploy --dir=./dist --site=$NETLIFY_SITE_ID --prod
