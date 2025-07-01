@@ -4,8 +4,8 @@ import tailwindcss from '@tailwindcss/vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
+	base: '/',
   plugins: [react(), tailwindcss(), tsconfigPaths()],
-  base: '/',
   build: {
     outDir: 'dist', // Use the default build folder
   },
