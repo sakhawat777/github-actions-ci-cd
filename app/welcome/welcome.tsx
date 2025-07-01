@@ -36,6 +36,7 @@ export function Welcome() {
 										{text}
 									</a>
 									<h4>Hello</h4>
+                  <h1>How are you?</h1>
 								</li>
 							))}
 						</ul>
