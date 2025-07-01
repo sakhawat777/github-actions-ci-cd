@@ -1,12 +1,12 @@
-import { reactRouter } from '@react-router/dev/vite';
-import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import tailwindcss from '@tailwindcss/vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
-	plugins: [tailwindcss(), reactRouter(), tsconfigPaths()],
-	base: '/', // ensure it builds correctly for Netlify
-	build: {
-		outDir: 'build/client', // matches your output folder
-	},
+  plugins: [react(), tailwindcss(), tsconfigPaths()],
+  base: '/',
+  build: {
+    outDir: 'dist', // Use the default build folder
+  },
 });
