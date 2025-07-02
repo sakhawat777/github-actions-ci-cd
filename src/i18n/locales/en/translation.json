@@ -1,0 +1,14 @@
+{
+	"myApp": "My App",
+	"welcome": "Welcome",
+	"login": "Log In",
+	"signUp": "Sign Up",
+	"footerText": "© {{year}} My App",
+	"email": "Email",
+	"password": "Password",
+	"confirmPassword": "Confirm Password",
+	"switchToEnglish": "Switch to English",
+	"switchToDarkMode": "Switch to Dark Mode",
+	"switchToLightMode": "Switch to Light Mode",
+	"name": "Name"
+}

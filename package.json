@@ -1,30 +1,38 @@
 {
-	"name": "github-actions-ci-cd",
-	"private": true,
-	"type": "module",
-	"scripts": {
-		"dev": "vite",
-		"build": "vite build",
-		"preview": "vite preview"
-	},
-	"dependencies": {
-		"@react-router/node": "^7.5.3",
-		"@react-router/serve": "^7.5.3",
-		"isbot": "^5.1.27",
-		"react": "^19.1.0",
-		"react-dom": "^19.1.0",
-		"react-router": "^7.5.3"
-	},
-	"devDependencies": {
-		"@react-router/dev": "^7.5.3",
-		"@tailwindcss/vite": "^4.1.4",
-		"@types/node": "^20",
-		"@types/react": "^19.1.2",
-		"@types/react-dom": "^19.1.2",
-		"@vitejs/plugin-react": "^4.6.0",
-		"tailwindcss": "^4.1.4",
-		"typescript": "^5.8.3",
-		"vite": "^6.3.3",
-		"vite-tsconfig-paths": "^5.1.4"
-	}
+  "name": "vite-project-config",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^3.9.1",
+    "i18next": "^24.2.1",
+    "prop-types": "^15.8.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-hook-form": "^7.54.0",
+    "react-i18next": "^15.4.0",
+    "react-router-dom": "^7.0.2",
+    "yup": "^1.5.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.15.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.15.0",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.14",
+    "globals": "^15.12.0",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.16",
+    "vite": "^6.0.1"
+  }
 }
